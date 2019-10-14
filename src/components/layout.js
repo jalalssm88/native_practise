@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Text, Form,
-Item, Label, Input, View,  } from 'native-base';
+Item, Label, Input, View, Card, CardItem,   } from 'native-base';
 import Feather from 'react-native-vector-icons/Feather';
 
-import AppNavigator2 from './detail'
-import AboutScreen from './about'
+import AppNavigator2 from './detail';
+import AboutScreen from './about';
+import TodoScreen from './todo';
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -18,19 +19,55 @@ class HomeScreen  extends Component {
               <Feather name="aperture" size={30} color='white' />
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title>React Native app</Title>
           </Body>
           <Right>
                 <Feather color="white" size={30} name='menu' />
           </Right>
         </Header>
         <Content>
-          <View>
-            <Text>Home screens</Text>
+          <View style={{paddingHorizontal:10, paddingVertical:20}}>
+            <Card>
+              <CardItem>
+                <Body>
+                  <Text style={{fontWeight:'bold', fontSize:18}}>
+                    Welcome to my simple app
+                  </Text>
+                  <Text>
+                    This is just a simple static app developed just to practise ,
+                    react native app development. React native is a super library 
+                    of javascript developed and maintained by facebook to develop
+                    android and ios bsed applications that works on cross plateform
+                    it helps clients to maintaine their applications on both android 
+                    and ios.
+                  </Text>
+                </Body>
+              </CardItem>
+            </Card>
+            <Card>
+              <CardItem>
+                <Body>
+                  <Text style={{fontWeight:'bold', fontSize:18}}>
+                    About this app
+                  </Text>
+                  <Text>
+                    This is just a simple static app developed just to practise ,
+                    react native app development. React native is a super library 
+                    of javascript developed and maintained by facebook to develop
+                    android and ios bsed applications that works on cross plateform
+                    it helps clients to maintaine their applications on both android 
+                    and ios.
+                  </Text>
+                </Body>
+              </CardItem>
+            </Card>
           </View>
         </Content>
         <Footer>
           <FooterTab>
+            <Button onPress={() => this.props.navigation.navigate('Todo')}>
+              <Text>go todo</Text>
+            </Button>
             <Button onPress={() => this.props.navigation.navigate('Details')}>
               <Text>go detail</Text>
             </Button>
@@ -53,6 +90,9 @@ const AppNavigator = createStackNavigator({
   },
   About:{
     screen: AboutScreen
+  },
+  Todo:{
+    screen: TodoScreen
   }
 },
 {
