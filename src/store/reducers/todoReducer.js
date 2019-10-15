@@ -1,4 +1,5 @@
 import { ADD_TODO, DELETE_TODO, EDIT_ITEM } from '../actions/todoAction';
+import { FetchActions } from '../actions';
 
 const initialState = {
     todoList:[
@@ -53,6 +54,8 @@ export default function(state = initialState, action){
                 ...state,
                 idited_val
             }
+            case FetchActions.REQUEST_API_DATA_SUCCESSS:
+                console.log('in reducer',action)
         default:
            return state
     }

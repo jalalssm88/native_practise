@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Text, Form,
 Item, Label, Input, View, Card, CardItem,   } from 'native-base';
 import Feather from 'react-native-vector-icons/Feather';
+// import {DrawerNavigator} from 'react-navigation';
+
+import SettingScreen from './setting'
 
 import AppNavigator2 from './detail';
 import AboutScreen from './about';
@@ -11,6 +14,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 class HomeScreen  extends Component {
+
   render() {
     return (
       <Container>
@@ -74,6 +78,10 @@ class HomeScreen  extends Component {
             <Button onPress={() => this.props.navigation.navigate('About')}>
               <Text>go about</Text>
             </Button>
+            <Button onPress={() => this.props.navigation.navigate('Setting')}>
+              <Text>go settings</Text>
+            </Button>
+
           </FooterTab>
         </Footer>
       </Container>
@@ -93,6 +101,9 @@ const AppNavigator = createStackNavigator({
   },
   Todo:{
     screen: TodoScreen
+  }, 
+  Setting:{
+    screen: SettingScreen
   }
 },
 {
