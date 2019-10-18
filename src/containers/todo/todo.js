@@ -5,9 +5,9 @@ import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Rig
 import Feather from 'react-native-vector-icons/Feather';
 
 import { connect } from 'react-redux';
-import { addItem } from '../store/actions/todoAction';
-import { deleteItem } from '../store/actions/todoAction';
-import { editItem } from '../store/actions/todoAction';
+import { addItem } from '../../store/actions/todoAction';
+import { deleteItem } from '../../store/actions/todoAction';
+import { editItem } from '../../store/actions/todoAction';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 class TodoScreen extends Component {
@@ -56,10 +56,10 @@ class TodoScreen extends Component {
                 <Container>
                     <Header>
                     <Left>
-                        <Feather onPress={() => this.props.navigation.goBack()} name="arrow-left" size={30} color='white' />
+                        <Feather name="align-center" size={30} color='white' />
                     </Left>
                     <Body>
-                        <Title>Todo App</Title>
+                        <Title>Todo Lists</Title>
                     </Body>
                     <Right>
                             <Feather color="white" size={30} name='menu' />
@@ -119,13 +119,6 @@ class TodoScreen extends Component {
                     </View>
                     </ScrollView>
                     </Content>
-                    <Footer>
-                    <FooterTab>
-                        <Button>
-                        <Text style={{color:'white'}}>todo screen</Text>
-                        </Button>
-                    </FooterTab>
-                    </Footer>
                 </Container>
             </React.Fragment>
         );

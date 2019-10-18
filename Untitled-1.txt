@@ -3,6 +3,7 @@ import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Rig
 Item, Label, Input, View, Card, CardItem,   } from 'native-base';
 import Feather from 'react-native-vector-icons/Feather';
 // import {DrawerNavigator} from 'react-navigation';
+import { createDrawerNavigator, DrawerNavigatorItems  } from 'react-navigation-drawer';
 
 import SettingScreen from './setting'
 
@@ -89,26 +90,54 @@ class HomeScreen  extends Component {
   }
 }
 
-const AppNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-  },
-  Details:{
-    screen: AppNavigator2,
-  },
-  About:{
-    screen: AboutScreen
-  },
-  Todo:{
-    screen: TodoScreen
-  }, 
-  Setting:{
-    screen: SettingScreen
+class ProfileScreen extends Component{
+  render(){
+    return(
+      <View>
+        <Text>
+          Hello ProfileScreen
+        </Text>
+      </View>
+    )
   }
-},
-{
-  headerMode:"none",
-  initialRouteName: 'Home',
-});
+}
+
+const CustomDrawerContentComponent = props => (
+  <ScrollView>
+   
+      <DrawerNavigatorItems {...props} />
+  </ScrollView>
+);
+
+const AppNavigator = createDrawerNavigator(
+  {
+    HomeScreen,
+    ProfileScreen
+  },{
+    drawerBackgroundColor :'white'
+  }
+)
+
+// const AppNavigator = createStackNavigator({
+//   Home: {
+//     screen: HomeScreen,
+//   },
+//   Details:{
+//     screen: AppNavigator2,
+//   },
+//   About:{
+//     screen: AboutScreen
+//   },
+//   Todo:{
+//     screen: TodoScreen
+//   }, 
+//   Setting:{
+//     screen: SettingScreen
+//   }
+// },
+// {
+//   headerMode:"none",
+//   initialRouteName: 'Home',
+// });
 
 export default createAppContainer(AppNavigator);
