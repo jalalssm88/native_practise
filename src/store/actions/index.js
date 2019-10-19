@@ -1,5 +1,7 @@
 import FetchActions from './userAction';
+import WeatherActions from './weatherAction'
 
 export {
-    FetchActions
+    FetchActions,
+    WeatherActions
 }

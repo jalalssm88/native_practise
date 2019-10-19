@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import todoReducer from './todoReducer'
-import userReducer from './userReducer'
+import todoReducer from './todoReducer';
+import userReducer from './userReducer';
+import weatherReducer from './weatherReducer'
 
 export default combineReducers({
     todo:todoReducer,
-    user:userReducer
+    user:userReducer,
+    weather:weatherReducer
 });

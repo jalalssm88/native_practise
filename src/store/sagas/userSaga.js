@@ -1,6 +1,5 @@
 import { FetchActions } from "../actions/";
 import { put, call } from "redux-saga/effects";
-import axios from 'axios';
 import httpRequest from './api'
 
 export function* getApiData(action) {

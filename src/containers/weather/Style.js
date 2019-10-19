@@ -6,4 +6,16 @@ export default StyleSheet.create({
     paddingHorizontal:17,
     paddingVertical:20
   },
+  weatherHeader:{
+    fontSize:22,
+    fontWeight:'bold'
+  },
+  temp:{
+    fontWeight:'bold',
+    fontSize:43,
+    marginLeft:20
+  },
+  descFont:{
+    fontSize:22
+  }
 })

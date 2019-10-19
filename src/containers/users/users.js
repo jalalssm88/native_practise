@@ -34,7 +34,7 @@ class UserScreen extends React.Component {
           <View style={{marginHorizontal:20, paddingVertical:30}}>
             <Text style={{marginBottom:20, fontWeight:'bold', fontSize:20, borderBottomWidth:1}}>User Personal Detail</Text>
             {
-              loader == true? <View style={{width:'100%', height:685, backgroundColor:'#FFFFFF', alignItems:'center', justifyContent:'center'}}>
+              loader == true? <View style={{width:'100%', height:500, backgroundColor:'#FFFFFF', alignItems:'center', justifyContent:'center'}}>
                 <Spinner color='red' />
               </View>:
               <View>

@@ -4,3 +4,5 @@ export default class httpRequest {
         return axios.get('https://randomuser.me/api').then((res)=> res)
     }
 } 
+
+
